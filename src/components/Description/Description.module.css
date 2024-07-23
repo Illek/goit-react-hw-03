@@ -1,0 +1,41 @@
+.title {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 48px;
+  color: var(--textBlue);
+  text-shadow: 1.3px 1.3px 1.5px rgba(0, 0, 0, 0.4);
+}
+
+.text {
+  width: 680px;
+  height: 102px;
+  padding: 18px 16px;
+  margin: 14px auto;
+  border: 2px solid rgb(242, 242, 242);
+  border-radius: 8px;
+  background-color: hsl(213deg 25.46% 90.7%);
+
+  color: var(--textBlue);
+  text-shadow: 1.3px 1.3px 1.5px rgba(0, 0, 0, 0.2);
+
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  text-align: center;
+
+  /* box-shadow: 0px 1px 1px #909193, inset 0px 1px 0px #fff,
+    -6px -6px 6px 0px rgb(255 255 255 / 45%); */
+}
+
+.elPopInShadowMedium {
+  box-shadow: inset 0px 1px 3px #00000040, 0px 1px 0px #fff,
+    -6px -6px 6px 0px rgb(255 255 255 / 45%);
+  border: 2px solid rgb(242, 242, 242);
+}
+
+.elPopInShadowLight {
+  box-shadow: inset 0px 1px 1px #909193, 0px 1px 0px #fff,
+    -6px -6px 6px 0px rgb(255 255 255 / 45%);
+  border: 2px solid rgb(242, 242, 242);
+}
