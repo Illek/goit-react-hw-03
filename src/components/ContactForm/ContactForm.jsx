@@ -12,7 +12,7 @@ const FeedbackSchema = Yup.object().shape({
     )
     .min(3, "Too Short, sugar 😯")
     .max(15, "Too long, sugar 😩")
-    .required("Required 😡"),
+    .required("Tell... Me... Your... Name! 😡"),
 
   number: Yup.string()
     .matches(
@@ -21,7 +21,7 @@ const FeedbackSchema = Yup.object().shape({
     )
     .min(3, "Too Short, sugar 😯")
     .max(50, "Too long, sugar 😩")
-    .required("Required 😡"),
+    .required("Give... Me... Your... Number! 😡"),
 });
 
 const ContactForm = () => {
@@ -45,31 +45,62 @@ const ContactForm = () => {
       initialValues={initialValues}
       onSubmit={handleSubmit}
     >
-      <Form className={s.form}>
-        <label className={clsx(s.label)} htmlFor={nameField}>
-          Name
-        </label>
-        <span className={s.errMsg}>
-          <ErrorMessage className={s.errMsgTxt} name="name" component="span" />
-        </span>
-        <Field className={s.field} name="name" type="text" id={nameField} />
+      {({ errors, touched }) => {
+        const validPass =
+          !errors.name && touched.name && !errors.number && touched.number;
+        return (
+          <Form className={s.form}>
+            <label className={clsx(s.label)} htmlFor={nameField}>
+              Name
+            </label>
+            <span className={s.errMsg}>
+              <ErrorMessage
+                className={s.errMsgTxt}
+                name="name"
+                component="span"
+              />
+            </span>
+            <Field
+              className={clsx(s.field, {
+                [s.notValid]: errors.name && touched.name,
+              })}
+              name="name"
+              type="text"
+              id={nameField}
+            />
 
-        <label className={s.label} htmlFor={numberField}>
-          Number
-        </label>
-        <span className={s.errMsg}>
-          <ErrorMessage
-            className={s.errMsgTxt}
-            name="number"
-            component="span"
-          />
-        </span>
-        <Field className={s.field} name="number" type="tel" id={numberField} />
+            <label className={s.label} htmlFor={numberField}>
+              Number
+            </label>
+            <span className={s.errMsg}>
+              <ErrorMessage
+                className={s.errMsgTxt}
+                name="number"
+                component="span"
+              />
+            </span>
+            <Field
+              className={clsx(s.field, {
+                [s.notValid]: errors.number && touched.number,
+              })}
+              name="number"
+              type="tel"
+              id={numberField}
+            />
 
-        <button className={s.btn} type="submit">
-          Submit
-        </button>
-      </Form>
+            <button
+              className={s.btn}
+              type="submit"
+              disabled={
+                (!validPass && errors.name && touched.name) ||
+                (errors.number && touched.number)
+              }
+            >
+              Add contact
+            </button>
+          </Form>
+        );
+      }}
     </Formik>
   );
 };

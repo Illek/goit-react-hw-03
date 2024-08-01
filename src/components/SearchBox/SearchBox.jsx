@@ -1,4 +1,4 @@
-// import s from './SearchBox.module.css'
+import s from "./SearchBox.module.css";
 import { useState } from "react";
 
 const SearchBox = () => {
@@ -9,9 +9,14 @@ const SearchBox = () => {
   };
   console.log({ inputValue });
   return (
-    <div>
-      <p>SearchBox</p>
-      <input type="text" value={inputValue} onChange={handlechange} />
+    <div className={s.wrapper}>
+      <p className={s.title}>Find contacts by name</p>
+      <input
+        className={s.input}
+        type="text"
+        value={inputValue}
+        onChange={handlechange}
+      />
       <p>{inputValue}</p>
     </div>
   );
