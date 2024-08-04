@@ -1,0 +1,15 @@
+.list {
+  box-shadow: 5px 5px 0px 1px #2a3145c4;
+  border: 3px solid #2a3145c4;
+  border-radius: 16px;
+  /* border: 3px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  width: 1070px;
+  max-height: 540px;
+  min-height: 146px;
+  padding: 5px;
+  margin: 0 auto;
+  /* background-color: #ebeff5; */
+  margin-bottom: 32px;
+}

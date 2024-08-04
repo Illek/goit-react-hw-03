@@ -36,6 +36,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 ul {
   list-style-type: none;
   margin-top: 0;

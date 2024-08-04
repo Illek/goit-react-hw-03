@@ -7,6 +7,8 @@
   justify-content: space-evenly;
   align-items: center;
   margin: 8px;
+  background-color: #007ede16;
+  z-index: 3;
 }
 
 .info {
@@ -59,14 +61,14 @@
 }
 
 .btn:hover {
-  background-color: #ff5b19;
+  background-color: hwb(0 0% 0%);
 }
 
 .btn {
   align-self: center;
   width: 60px;
   height: 60px;
-  background-color: #ff692e;
+  background-color: hwb(0 25% 0%);
   position: relative;
   font-size: 14px;
   color: #ffffffea;
@@ -106,7 +108,7 @@
 
 .btn:active {
   /* background-color: #2a3145; */
-  background-color: #db3e00;
+  background-color: hwb(0 0% 35%);
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.38),
     inset 2px 2px 4px -2px rgb(0, 0, 0);
   border-color: transparent;

@@ -1,0 +1,90 @@
+.compWrap {
+  display: flex;
+  flex-direction: row;
+  padding: 15px 10px;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--textBlue);
+}
+
+.wrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  height: 105px;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+}
+
+.btn:hover {
+  background-color: hwb(0 0% 0%);
+}
+
+.btn {
+  margin-right: auto;
+  position: absolute;
+
+  align-self: center;
+  width: 20px;
+  height: 20px;
+  background-color: hwb(0 25% 0%);
+  position: relative;
+  font-size: 14px;
+  color: #ffffffea;
+  text-shadow: 1.3px 1.3px 1.5px rgba(0, 0, 0, 0.749);
+
+  padding: 10px;
+  border: solid 1px #00000041;
+  border-top: none;
+  border-left: none;
+  border-radius: 50%;
+  margin: 20px;
+
+  box-shadow: 1.3px 1.3px 5px 1px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 0 rgba(0, 0, 0, 0);
+
+  transition: box-shadow 90ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    background-color 90ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    border 90ms cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  &.btn::before {
+    background-color: hsl(213, 10%, 90%);
+    content: "";
+    display: block;
+    position: absolute;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    left: -10px;
+    top: -10px;
+    z-index: -1;
+    border-radius: 50%;
+    box-shadow: inset 0px 1px 1px #909193, 0px 1px 0px #fff,
+      -6px -6px 6px 0px rgb(255 255 255 / 55%);
+    transition: background-color 90ms cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 190ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.btn:active {
+  /* background-color: #2a3145; */
+  background-color: hwb(0 0% 35%);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.38),
+    inset 2px 2px 4px -2px rgb(0, 0, 0);
+  border-color: transparent;
+  text-shadow: 1px 1px 1.1px rgba(0, 0, 0, 0.749);
+
+  &.btn::before {
+    background-color: hsl(213, 10%, 88%);
+    box-shadow: inset 1px 2px 2px #909193, 0px 1px 0px #fff;
+  }
+}
