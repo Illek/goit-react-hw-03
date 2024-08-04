@@ -3,6 +3,7 @@ import { Form, Formik, Field, ErrorMessage } from "formik";
 import { useId } from "react";
 import * as Yup from "yup";
 import clsx from "clsx";
+import { nanoid } from "nanoid";
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string("It`s should be name, baby")
@@ -11,7 +12,7 @@ const FeedbackSchema = Yup.object().shape({
       "If your dad isn't Elon Musk, there's a mistake, sweetie 🤨"
     )
     .min(3, "Too Short, sugar 😯")
-    .max(15, "Too long, sugar 😩")
+    .max(25, "Too long, sugar 😩")
     .required("Tell... Me... Your... Name! 😡"),
 
   number: Yup.string()
@@ -24,7 +25,7 @@ const FeedbackSchema = Yup.object().shape({
     .required("Give... Me... Your... Number! 😡"),
 });
 
-const ContactForm = () => {
+const ContactForm = ({ addContacts }) => {
   //
   const initialValues = {
     name: "",
@@ -35,8 +36,13 @@ const ContactForm = () => {
   const numberField = useId();
 
   const handleSubmit = (values, actions) => {
-    console.log(values);
+    addContacts({
+      id: nanoid(),
+      name: values.name,
+      number: values.number,
+    });
     actions.resetForm();
+    // console.log(values);
   };
 
   return (

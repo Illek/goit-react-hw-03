@@ -24,12 +24,16 @@
 }
 
 .field {
+  color: #353e58e8;
   font-size: 17px;
   line-height: 1.15;
   letter-spacing: 0.03em;
   text-transform: capitalize;
 
-  border: 1px solid rgba(0, 0, 0, 0.7);
+  background-color: #66a3d280;
+
+  border: 3px solid transparent;
+  outline: 3px solid #66a3d280;
   border-radius: 3px;
   width: 330px;
   height: 35px;
@@ -38,12 +42,13 @@
 }
 
 .field:focus-within {
-  outline: 3px solid #67e6677e;
+  outline: 3px solid #2a3145c4;
+  background-color: #66a3d280;
   border-color: transparent;
 }
 
 .notValid {
-  border-color: red;
+  outline: 3px solid #ff0000a6;
 }
 .notValid:focus-visible {
   outline: 3px solid #e667677e;
@@ -123,10 +128,10 @@
 }
 
 .btn:disabled {
-  background-color: gray;
+  background-color: #2a3145;
   cursor: not-allowed;
   &.btn:hover {
-    background-color: #909193;
+    background-color: #353e58;
   }
   &.btn:active {
     background-color: none;
